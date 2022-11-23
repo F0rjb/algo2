@@ -42,5 +42,5 @@ BEGIN
     Write("the sum of unique values = ");
     Write (notsame);
     Write("the sum of duplicated values = ");
-    Write(same );
+    Write(same);
 END
