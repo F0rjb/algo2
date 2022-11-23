@@ -1,0 +1,46 @@
+ALGORITHM Compare_1
+VAR
+    arr1 : ARRAY_OF INTEGER;
+    arr2 : ARRAY_OF INTEGER;
+    same , notsame : INTEGER := 0;
+    i , j :INTEGER;
+    equals:BOOLEAN;
+
+BEGIN
+
+
+    FOR i FROM 0 TO arr1.length STEP 1  DO
+    equals:= false;
+         FOR j FROM 0 TO arr2.length STEP 1  DO
+        IF (arr1[i]=arr2[j]) THEN
+            equals=true;
+        END_IF
+         END_FOR
+         IF (equals=true) THEN
+            same=same+arr1[i];
+         ELSE
+            notsame=notsame+arr1[i];
+         END_IF
+        
+    END_FOR
+
+    FOR j FROM 0 TO arr2.length STEP 1  DO
+    equals:= false;
+         FOR i FROM 0 TO arr1.length STEP 1  DO
+        IF (arr1[i]=arr2[j]) THEN
+            equals=true;
+        END_IF
+         END_FOR
+         IF (equals=true) THEN
+            same=same+arr2[j];
+         ELSE
+            notsame=notsame+arr2[j];
+         END_IF
+        
+    END_FOR
+
+    Write("the sum of unique values = ");
+    Write (notsame);
+    Write("the sum of duplicated values = ");
+    Write(same );
+END
